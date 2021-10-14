@@ -18,6 +18,7 @@ function App() {
  */
   return (
     <div className="container">
+      <h1>Kauppalista</h1>
       <ol>
         <li>laalaa</li>
         <li>pai</li>
