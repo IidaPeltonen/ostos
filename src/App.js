@@ -19,7 +19,11 @@ function App() {
   return (
     <div className="container">
       <ol>
-        laalaa
+        <li>laalaa</li>
+        <li>pai</li>
+        <li>hipsu</li>
+        <li>tiivitaavi</li>
+
       </ol>
     </div>
   );
