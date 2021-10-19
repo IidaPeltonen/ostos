@@ -7,9 +7,6 @@ const URL = 'http://localhost/ostosphp/';
 function App() {
   const [items, setItems] = useState([]);
   const [item, setItem] = useState('')
- 
-  /* const [editTask, setEditTask] = useState(null);
-  const [editDescription, setEditDescription] = useState(''); */
 
   useEffect(() => {
     axios.get(URL)
@@ -17,7 +14,7 @@ function App() {
         console.log(response.data)
         setItems(response.data)
       }).catch(error => {
-        alert(/* error.response ? error.response.data.error :  */error);
+        alert(kerror);
       })
   }, [])
 
