@@ -28,7 +28,16 @@ a {
   color: blueviolet;
 }
 
-
 .editForm {
   display: inline-block;
+}
+
+label {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+input {
+  margin-left: 10px;
+  margin-right: 10px;
 }
