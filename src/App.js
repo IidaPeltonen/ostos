@@ -111,12 +111,11 @@ function App() {
 
   return (
     <div className="container">
-      <h3>Kauppalista</h3>
+      <h1>Kauppalista</h1>
       <form onSubmit={save}>
         <label>New item</label>
-        <input value={item} onChange={e => setItem(e.target.value)} />
-        <label>New Amount</label>
-        <input value={item} onChange={f => setItem(f.target.value)} />
+        <input for={item.description} placeholder="item name" value={item.description} onChange={e => setItem(e.target.value)} />
+        <input for={item.amount} placeholder="amount" value={item.amount} onChange={e => setItem(e.target.value)} />
         <button>Save</button>
       </form>
       <ol>
