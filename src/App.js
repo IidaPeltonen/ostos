@@ -21,22 +21,22 @@ function App() {
       })
   }, [])
 
- /*  function save(e) {
+  function save(e) {
     e.preventDefault();
-    const json = JSON.stringify({description:task})
+    const json = JSON.stringify({description:item, amount:item})
     axios.post(URL + 'add.php',json,{
       headers: {
         'Content-Type' : 'applicationJ/json'
       }
     })
     .then((response) => {
-      setTasks(tasks => [...tasks,response.data]);
-      setTask('');
+      setItems(Items => [...items,response.data]);
+      setItem('');
     }).catch (error => {
       alert(error.response.data.error)
     })
   }
-
+/* 
   function remove(id) {
     const json= JSON.stringify({id:id})
     axios.post(URL + 'delete.php', json, {
@@ -111,6 +111,14 @@ function App() {
 
   return (
     <div className="container">
+      <h3>Kauppalista</h3>
+      <form onSubmit={save}>
+        <label>New item</label>
+        <input value={item} onChange={e => setItem(e.target.value)} />
+        <label>New Amount</label>
+        <input value={item} onChange={f => setItem(f.target.value)} />
+        <button>Save</button>
+      </form>
       <ol>
         {items?.map(item => (
           <li key={item.id}>{item.description}{item.amount}</li>
