@@ -15,7 +15,7 @@ function App() {
     axios.get(URL)
       .then((response) => {
         console.log(response.data)
-        // setTasks(response.data)
+        setItems(response.data)
       }).catch(error => {
         alert(/* error.response ? error.response.data.error :  */error);
       })
