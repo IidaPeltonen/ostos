@@ -114,8 +114,8 @@ function App() {
       <h1>Kauppalista</h1>
       <form onSubmit={save}>
         <label>New item</label>
-        <input for={item.description} placeholder="item name" value={item.description} onChange={e => setItem(e.target.value)} />
-        <input for={item.amount} placeholder="amount" value={item.amount} onChange={e => setItem(e.target.value)} />
+        <input placeholder="item name" value={item.description} onChange={e => setItem(e.target.value)} />
+        <input placeholder="amount" value={item.amount} onChange={e => setItem(e.target.value)} />
         <button>Save</button>
       </form>
       <ol>
