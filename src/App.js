@@ -7,6 +7,7 @@ const URL = 'http://localhost/ostosphp/';
 function App() {
   const [items, setItems] = useState([]);
   const [item, setItem] = useState('')
+  const [amount, setAmount] = useState('')
 
   useEffect(() => {
     axios.get(URL)
@@ -20,7 +21,7 @@ function App() {
 
   function save(e) {
     e.preventDefault();
-    const json = JSON.stringify({description:item, amount:item})
+    const json = JSON.stringify({description:item, amount:amount})
     axios.post(URL + 'add.php',json,{
       headers: {
         'Content-Type' : 'applicationJ/json'
@@ -33,7 +34,7 @@ function App() {
       alert(error.response.data.error)
     })
   }
-/* 
+
   function remove(id) {
     const json= JSON.stringify({id:id})
     axios.post(URL + 'delete.php', json, {
@@ -42,13 +43,13 @@ function App() {
       }
     })
     .then((response) => {
-      const newListWithoutRemoved = tasks.filter((item) => item.id !== id);
-      setTasks(newListWithoutRemoved);
+      const newListWithoutRemoved = items.filter((item) => item.id !== id);
+      setItems(newListWithoutRemoved);
     }).catch (error => {
       alert(error.response ? error.response.data.error : error);
     });
   }
-
+/* 
   function setEditedTask(task) {
     setEditTask(task);
     setEditDescription(task?.description);
@@ -108,16 +109,22 @@ function App() {
 
   return (
     <div className="container">
+      
       <h1>Kauppalista</h1>
       <form onSubmit={save}>
         <label>New item</label>
-        <input placeholder="item name" value={item.description} onChange={e => setItem(e.target.value)} />
-        <input placeholder="amount" value={item.amount} onChange={e => setItem(e.target.value)} />
+        <input value={item} placeholder="type description" onChange={e => setItem(e.target.value)} />
+        <input value={amount} placeholder = "type amount" onChange={e => setAmount(e.target.value)} />
         <button>Save</button>
       </form>
       <ol>
         {items?.map(item => (
-          <li key={item.id}>{item.description}{item.amount}</li>
+          <li key={item.id}>     
+          {item.description}&nbsp;{item.amount}&nbsp;
+          <a href="#" className="delete" onClick={() => remove(item.id)}>
+            Delete
+          </a>
+          </li>
         ))}
       </ol>
     </div>
