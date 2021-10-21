@@ -116,7 +116,18 @@ function App() {
         <input value={amount} placeholder = "määrä" onChange={e => setAmount(e.target.value)} />
         <button>Tallenna</button>
       </form>
-      <ul class="a">
+      <table>
+        {items?.map(item => (
+          <tr key={item.id}><td hidden>{item.id}</td><td id="vali">{item.description}</td><td id="toka">{item.amount}</td>          <a href="#" className="delete" onClick={() => remove(item.id)}>
+            Delete
+          </a>
+          </tr>
+        ))}
+      </table>
+
+
+
+      {/* <ul class="a">
         {items?.map(item => (
           <li key={item.id} >&nbsp;    
           {item.description}&nbsp;{item.amount}&nbsp;
@@ -125,7 +136,7 @@ function App() {
           </a>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
     
   )
