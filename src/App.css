@@ -1,43 +1,46 @@
-.App {
+
+body {
+  background-image: url('/src/tausta2.png');
+  background-size: 100%;
   text-align: center;
 }
 
-main {
-  background-image: url('tausta.PNG');
-}
-
-
 .container {
-  padding: 30px;
+  padding: 200px;
 }
 
 a {
-  padding-left: 5px;
-}
-
-.delete {
-
+  padding-left: 50px;
   color: red;
 }
 
-.save {
-  color: green;
+a:hover {
+  color: blue;
 }
 
-.edit {
-  color: blueviolet;
-}
-
-.editForm {
-  display: inline-block;
-}
 
 label {
   padding-left: 10px;
   padding-right: 10px;
+  display: inline-block;
+  width: 250px;
 }
 
 input {
   margin-left: 10px;
   margin-right: 10px;
 }
+
+h1 {
+  padding-bottom: 40px;
+}
+
+form {
+  padding-bottom: 40px;
+}
+
+ul.a {
+  list-style-position: outside;
+}
+
+

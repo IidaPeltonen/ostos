@@ -109,27 +109,26 @@ function App() {
 
   return (
     <div className="container">
-      
       <h1>Kauppalista</h1>
       <form onSubmit={save}>
-        <label>New item</label>
-        <input value={item} placeholder="type description" onChange={e => setItem(e.target.value)} />
-        <input value={amount} placeholder = "type amount" onChange={e => setAmount(e.target.value)} />
-        <button>Save</button>
+        <label>Lisää tuote</label>
+        <input value={item} placeholder="nimi" onChange={e => setItem(e.target.value)} />
+        <input value={amount} placeholder = "määrä" onChange={e => setAmount(e.target.value)} />
+        <button>Tallenna</button>
       </form>
-      <ol>
+      <ul class="a">
         {items?.map(item => (
-          <li key={item.id}>     
+          <li key={item.id} >&nbsp;    
           {item.description}&nbsp;{item.amount}&nbsp;
           <a href="#" className="delete" onClick={() => remove(item.id)}>
             Delete
           </a>
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
+    
   )
 }
-
 
 export default App;
